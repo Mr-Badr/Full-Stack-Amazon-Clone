@@ -1,2 +1,23 @@
-/* TODO: i have to get the CSS from Github */
-/* TODO: i have to check the max-width of .home */
+/* FIXME: i have to check the max-width of .home  (1500px) */
+.home {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home__image {
+  width: 100%;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  z-index: -1;
+  margin-bottom: -150px;
+}
+
+.home__row {
+  display: flex;
+  z-index: 1;
+  margin-left: 5px;
+  margin-right: 5px;
+  flex-wrap: wrap;
+}

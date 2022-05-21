@@ -1,2 +1,14 @@
-// TODO: git code from amazon-clone in USB 
-// TODO: after that change the index.js 
+import React, { createContext, useContext, useReducer } from "react";
+
+//Prepares the DataLayer
+export const StateContext = createContext();
+
+// Wrap our app and provide the DataLayer
+export const StateProvider = ({ reducer, initialState, children }) => (
+  <StateContext.Provider value={useReducer(reducer, initialState)}>
+    {children}
+  </StateContext.Provider>
+);
+
+// pull the information from DataLayer
+export const useStateValue = () => useContext(StateContext);
