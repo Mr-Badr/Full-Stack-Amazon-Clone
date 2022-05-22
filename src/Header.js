@@ -38,7 +38,6 @@ function Header() {
           <span className='header__optionLineTwo'>Prime</span>
         </div>
         
-        {/* FIXME: I have to Change <a> Tag with <Link> Component */}
         <Link to='/checkout'>
           <div className="header__optionBasket">
             <ShoppingBasketIcon />
