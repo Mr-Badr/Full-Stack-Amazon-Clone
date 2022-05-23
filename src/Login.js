@@ -1,32 +1,33 @@
 import React from "react";
 import "./Login.css";
 import { Link, useNavigate  } from "react-router-dom";
-//import { auth } from "../config/firebase";
+import { auth } from "./firebase";
 import { useState } from "react";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const history = useNavigate ();
+  const navigate = useNavigate ();
 
   const logIn = (e) => {
     e.preventDefault(); // Because we don't want to refrech
-    // auth
-    //   .signInWithEmailAndPassword(email, password)
-    //   .then((res) => {
-    //     history.push("/");
-    //   })
-    //   .catch((e) => alert(e.message));
+      auth
+      .signInWithEmailAndPassword(email, password)
+      .then((res) => {
+        navigate("/");
+      })
+      .catch((e) => alert(e.message));
   };
 
   const register = (e) => {
     e.preventDefault();
-    // auth
-    //   .createUserWithEmailAndPassword(email, password)
-    //   .then((res) => {
-    //     history.push("/");
-    //   })
-    //   .catch((e) => alert(e.message));
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((res) => {
+        // it created a new user with email and password
+        navigate("/");
+      })
+      .catch((e) => alert(e.message));
   };
 
   return (
